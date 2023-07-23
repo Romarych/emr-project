@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useReactiveVar } from '@apollo/client';
 
 import DateNow from './DateNow';
+import { setClient } from '../../cache';
 
 import logo from '../../static/images/logo.png';
 import avatar from '../../static/images/avatar-1.png';
@@ -9,7 +11,10 @@ import settingsActive from '../../static/images/settings-active.svg';
 import logout from '../../static/images/logout.svg';
 import logoutActive from '../../static/images/logout-active.svg';
 
+
 const Header = () => {
+  const client = useReactiveVar(setClient);
+
   const [isMenu, setIsMenu] = useState<boolean>(false);
 
   return (
@@ -18,7 +23,7 @@ const Header = () => {
         <img src={logo} alt="Logo" className='h-[52px]' />
       </div>
       <div className='flex justify-between items-center w-[calc(100%-280px)]'>
-        <div className='text-brown-1 font-medium text-2xl leading-7 pl-3'>Welcome</div>
+        <div className='text-brown-1 font-medium text-2xl leading-7 pl-3'>{client ? 'Client Profile' : 'Welcome'}</div>
         <DateNow/>
         <div className='flex text-sm leading-4 items-center relative'>
           <div className='text-right'>

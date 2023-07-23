@@ -21,7 +21,7 @@ const DateNow = () => {
       <span className='mx-3'>{timeNow}</span>
       <span className='pl-3 border-l border-gray-2'>{dateNow}</span>
     </div>
-  )
-}
+  );
+};
 
-export default DateNow
+export default DateNow;

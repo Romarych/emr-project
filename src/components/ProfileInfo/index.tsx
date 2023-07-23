@@ -62,18 +62,18 @@ const ProfileInfo = () => {
                                 id: client?.id || '',
                                 isChange: isChange,
                                 photo: client?.photo || '',
-                                fullName: client?.fullName || '',
+                                fullName: client?.fullName || 'None',
                                 gender: client?.gender || '',
-                                dob: client?.dob || '',
-                                weight: client?.weight || '',
-                                height: client?.height || '',
-                                phone: client?.phone || '',
-                                address: client?.address || '',
-                                email: client?.email || '',
-                                medical: client?.medical || '',
-                                instagram: client?.instagram || '',
-                                facebook: client?.facebook || '',
-                                recomendations: client?.recomendations || '',
+                                dob: client?.dob || 'None',
+                                weight: client?.weight || 'None',
+                                height: client?.height || 'None',
+                                phone: client?.phone || 'None',
+                                address: client?.address || 'None',
+                                email: client?.email || 'None',
+                                medical: client?.medical || 'None',
+                                instagram: client?.instagram || 'None',
+                                facebook: client?.facebook || 'None',
+                                recomendations: client?.recomendations || 'None',
                                 notificationsSMS: client?.notificationsSMS || false,
                                 notificationsEmail: client?.notificationsEmail || false,
                                 comments: client?.comments || ''
@@ -205,7 +205,7 @@ const ProfileInfo = () => {
                                                                 </div>}
                                                         </div>
                                                     </div> :
-                                                    <Field name={item.name.toLowerCase().replace(' insurance', '').replace('-', '')} className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} outline outline-0 w-[219px] h-[29px] rounded-sm`} type={item.type} disabled={!isChange} />}
+                                                    <Field name={item.name.toLowerCase().replace(' insurance', '').replace('-', '')} className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} outline outline-0 w-[219px] h-[29px] rounded-sm`} type='text' disabled={!isChange} />}
                                         </div>)}
                                     </div>
                                     {!isChange ?

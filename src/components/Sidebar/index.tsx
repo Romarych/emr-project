@@ -10,7 +10,8 @@ import { ClientType } from '../../types';
 
 const Sidebar = () => {
     const clients = useReactiveVar(setClients);
-    
+    const client = useReactiveVar(setClient);
+
     const [filterClients, setFilterClients] = useState<ClientType[] | undefined>(clients);
     const [value, setValue] = useState<string>('');
 
@@ -58,10 +59,10 @@ const Sidebar = () => {
                     setFilterClients(clients);
                 }} src={close} alt="Close" className='absolute right-1 top-1/2 h-6 -translate-y-1/2 cursor-pointer' />
             </div>
-            {filterClients?.slice(0, 2).map((client, index) => {
-                const fullName = client.fullName
-                return <div key={index} onClick={() => setClient(client)} className='flex bg-white-1 p-2 rounded-md overflow-hidden mb-2 cursor-pointer'>
-                    <img src={client.photo || 'https://placehold.co/56x56'} alt="Avatar" className='h-14 w-14 rounded-md mr-2' />
+            {filterClients?.slice(0, 2).map((item, index) => {
+                const fullName = item.fullName
+                return <div key={index} onClick={() => setClient(item)} className={`${client?.id == item.id ? 'bg-yellow-1' : 'bg-white-1'} flex p-2 rounded-md overflow-hidden mb-2 cursor-pointer`}>
+                    <img src={item.photo || 'https://placehold.co/56x56'} alt="Avatar" className='h-14 w-14 rounded-md mr-2' />
                     <div>
                         <div className='text-black-1 text-sm leading-4 font-medium whitespace-nowrap'>
                             {fullName.slice(0,13)}

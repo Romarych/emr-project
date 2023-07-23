@@ -30,14 +30,14 @@ const ProfileInfo = () => {
         setIsChange(isNewClient);
         setPhoto(client?.photo || '');
     }, [client, isNewClient]);
-    
+
     const submit = (values: ClientType) => {
         const uniqueId = () => {
             const dateString = Date.now().toString(36);
             const randomness = Math.random().toString(36).substr(2);
             return dateString + randomness;
         };
-        
+
         setIsChange(false);
         setIsNewClient(false);
 
@@ -47,13 +47,13 @@ const ProfileInfo = () => {
             setClient({ ...values, id, photo });
         } else {
             setClient({ ...values, id: client!.id, photo });
-            setClients(clients.map(item => item.id === client?.id ? {...values, photo: photo || item.photo} : item));
+            setClients(clients.map(item => item.id === client?.id ? { ...values, photo: photo || item.photo } : item));
         }
     };
 
     return (
         <>
-            {(isNewClient || client)  ?
+            {(isNewClient || client) ?
                 <div>
                     <div className='w-[476px] bg-white-2 ml-[296px] rounded-sm mb-[56px]'>
                         <Formik
@@ -108,7 +108,7 @@ const ProfileInfo = () => {
                                                             <div className='relative'>
                                                                 <Field as="select" name='gender' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} w-[219px] h-[29px] ${isChange && 'bg-[url("./static/images/arrow-input.svg")]'} bg-no-repeat bg-right rounded-sm outline outline-0 appearance-none`} disabled={!isChange}>
                                                                     <option value="M">{isChange ? 'Male' : 'M'}</option>
-                                                                    <option value="F">{isChange ? 'Female': 'F'}</option>
+                                                                    <option value="F">{isChange ? 'Female' : 'F'}</option>
                                                                 </Field>
                                                             </div>
                                                         </div>
@@ -131,16 +131,17 @@ const ProfileInfo = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='flex py-8 mx-5 border-b border-b-gray-3'>
-                                        <button type='button' className='bg-blue-1 w-[175px] h-[39px] mr-5 rounded-sm text-[13px] font-medium leading-4 text-gray-1 flex items-center justify-center'>
-                                            <img src={order} alt="Order" className='h-6 w-6 mr-4' />
-                                            Add New Order
-                                        </button>
-                                        <button type='button' className='bg-blue-1 w-[175px] h-[39px] rounded-sm text-[13px] font-medium leading-4 text-gray-1 flex items-center justify-center'>
-                                            <img src={note} alt="Order" className='h-6 w-6 mr-4' />
-                                            Add New Note
-                                        </button>
-                                    </div>
+                                    {!isChange &&
+                                        <div className='flex py-8 mx-5 border-b border-b-gray-3'>
+                                            <button type='button' className='bg-blue-1 w-[175px] h-[39px] mr-5 rounded-sm text-[13px] font-medium leading-4 text-gray-1 flex items-center justify-center'>
+                                                <img src={order} alt="Order" className='h-6 w-6 mr-4' />
+                                                Add New Order
+                                            </button>
+                                            <button type='button' className='bg-blue-1 w-[175px] h-[39px] rounded-sm text-[13px] font-medium leading-4 text-gray-1 flex items-center justify-center'>
+                                                <img src={note} alt="Order" className='h-6 w-6 mr-4' />
+                                                Add New Note
+                                            </button>
+                                        </div>}
                                     <div className='mx-5 mt-6'>
                                         {listInfo.map(item => <div key={item.name} className='text-right mb-3'>
                                             <img src={item.icon} alt={item.name} className='w-6 h-6 float-left' />
@@ -234,7 +235,7 @@ const ProfileInfo = () => {
                         </Formik>
                     </div>
                     <div className='w-[476px] bg-white-2 left-[788px] h-[calc(100vh-156px)] top-[96px] fixed rounded-sm mb-[56px]' />
-                </div> : 
+                </div> :
                 <div className='flex items-center h-screen w-screen pl-[280px] justify-center text-gray-6 text-3xl'><span>No Customer Selected</span></div>}
         </>
     );

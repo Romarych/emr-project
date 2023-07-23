@@ -29,6 +29,7 @@ const ProfileInfo = () => {
     useEffect(() => {
         setIsChange(isNewClient);
         setPhoto(client?.photo || '');
+        client?.id && setIsNewClient(false);
     }, [client, isNewClient]);
 
     const submit = (values: ClientType) => {

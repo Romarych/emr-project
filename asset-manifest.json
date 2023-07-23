@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/emr-project/static/css/main.81050650.css",
-    "main.js": "/emr-project/static/js/main.8a8cf34d.js",
+    "main.js": "/emr-project/static/js/main.1f6d2263.js",
     "static/media/logo.png": "/emr-project/static/media/logo.7aa8800d722f9187aa13.png",
     "static/media/avatar-1.png": "/emr-project/static/media/avatar-1.a499d86e2fde43f0d1e7.png",
     "static/media/settings-active.svg": "/emr-project/static/media/settings-active.f6e47e067d833a42d2bc3f79ebed3b08.svg",
@@ -13,10 +13,10 @@
     "static/media/check-input.svg": "/emr-project/static/media/check-input.e10b0feda2bc87ed69c663505a704718.svg",
     "static/media/arrow-input.svg": "/emr-project/static/media/arrow-input.b98ee6fd47c3c039ac29.svg",
     "main.81050650.css.map": "/emr-project/static/css/main.81050650.css.map",
-    "main.8a8cf34d.js.map": "/emr-project/static/js/main.8a8cf34d.js.map"
+    "main.1f6d2263.js.map": "/emr-project/static/js/main.1f6d2263.js.map"
   },
   "entrypoints": [
     "static/css/main.81050650.css",
-    "static/js/main.8a8cf34d.js"
+    "static/js/main.1f6d2263.js"
   ]
 }

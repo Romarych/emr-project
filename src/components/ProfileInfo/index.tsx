@@ -96,18 +96,18 @@ const ProfileInfo = () => {
                                                     }}
                                                     placeholder="Upload file" type="file" name='photo'
                                                     accept="image/png, image/jpeg"
-                                                    className='h-[136px] w-[136px] rounded-full cursor-pointer mx-auto opacity-0 absolute top-0 left-0' />
-                                            </>}
+                                                    className='h-[136px] w-[136px] rounded-full  cursor-pointer mx-auto opacity-0 absolute top-0 left-0 ' />
+                                            </>} 
                                         </div>
                                         <div>
                                             <div>
                                                 <div>
-                                                    <Field name='fullName' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} w-full mb-3 rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
+                                                    <Field name='fullName' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} p-2 w-full mb-3 rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
                                                     <div className='w-[281px]'>
                                                         <div className='text-right mb-3'>
                                                             <span className='float-left flex items-center text-[13px] font-light leading-4 h-[29px]'>Gender:</span>
                                                             <div className='relative'>
-                                                                <Field as="select" name='gender' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} w-[219px] h-[29px] ${isChange && 'bg-[url("./static/images/arrow-input.svg")]'} bg-no-repeat bg-right rounded-sm outline outline-0 appearance-none`} disabled={!isChange}>
+                                                                <Field as="select" name='gender' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} px-2 w-[219px] h-[29px] ${isChange && 'bg-[url("./static/images/arrow-input.svg")]'} bg-no-repeat bg-right rounded-sm outline outline-0 appearance-none`} disabled={!isChange}>
                                                                     <option value="M">{isChange ? 'Male' : 'M'}</option>
                                                                     <option value="F">{isChange ? 'Female' : 'F'}</option>
                                                                 </Field>
@@ -115,16 +115,16 @@ const ProfileInfo = () => {
                                                         </div>
                                                         <div className='text-right mb-3'>
                                                             <span className='float-left flex items-center text-[13px] font-light leading-4 h-[29px]'>DOB:</span>
-                                                            <Field name='dob' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} w-[219px] rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
+                                                            <Field name='dob' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} p-2 w-[219px] rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
                                                         </div>
                                                         <div className='text-right mb-3'>
                                                             <span className='float-left flex items-center text-[13px] font-light leading-4 h-[29px]'>Weight:</span>
-                                                            <Field name='weight' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} w-[181px] rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
+                                                            <Field name='weight' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} p-2 w-[181px] rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
                                                             <div className='w-[38px] inline-block text-left pl-1 text-[13px] font-light leading-4'>lb.</div>
                                                         </div>
                                                         <div className='text-right'>
                                                             <span className='float-left flex items-center text-[13px] font-light leading-4 h-[29px]'>Height:</span>
-                                                            <Field name='height' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} w-[181px] rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
+                                                            <Field name='height' className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} p-2 w-[181px] rounded-sm h-[29px] outline outline-0`} type="text" disabled={!isChange} />
                                                             <div className='w-[38px] inline-block text-left pl-1 text-[13px] font-light leading-4'>ft.</div>
                                                         </div>
                                                     </div>
@@ -152,7 +152,7 @@ const ProfileInfo = () => {
                                                     name='comments'
                                                     as='textarea'
                                                     disabled={!isChange}
-                                                    className="peer h-full min-h-[100px] w-full resize-none rounded-sm bg-gray-1 px-3 py-2.5 text-sm font-normal outline outline-0 transition-all focus:outline-0 disabled:resize-none"
+                                                    className="peer h-full min-h-[100px] w-full resize-none rounded-sm bg-gray-1 p-2 text-sm font-normal outline outline-0 transition-all focus:outline-0 disabled:resize-none"
                                                 /> :
                                                 item.name === 'Social Marketing & Notifications' ?
                                                     <div className='w-full inline-block text-[13px] font-light leading-4 ml-6  h-[64px]'>
@@ -207,7 +207,7 @@ const ProfileInfo = () => {
                                                                 </div>}
                                                         </div>
                                                     </div> :
-                                                    <Field name={item.name.toLowerCase().replace(' insurance', '').replace('-', '')} className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} outline outline-0 w-[219px] h-[29px] rounded-sm`} type='text' disabled={!isChange} />}
+                                                    <Field name={item.name.toLowerCase().replace(' insurance', '').replace('-', '')} className={`${!isChange ? 'bg-transparent' : 'bg-gray-1'} p-2 outline outline-0 w-[219px] h-[29px] rounded-sm`} type='text' disabled={!isChange} />}
                                         </div>)}
                                     </div>
                                     {!isChange ?

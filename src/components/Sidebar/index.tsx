@@ -5,14 +5,14 @@ import { setClient, setClients, setIsNewClient } from '../../cache';
 import square from '../../static/images/square.png'
 import add from '../../static/images/add.png'
 import close from '../../static/images/close.png'
-import avatar from '../../static/images/avatar-2.png'
 import { useReactiveVar } from '@apollo/client';
 import { ClientType } from '../../types';
 
 const Sidebar = () => {
     const clients = useReactiveVar(setClients);
-    const [filterClients, setFilterClients] = useState<ClientType[] | undefined>(clients)
-    const [value, setValue] = useState<string>('')
+    
+    const [filterClients, setFilterClients] = useState<ClientType[] | undefined>(clients);
+    const [value, setValue] = useState<string>('');
 
     useEffect(() => {
         setFilterClients(
@@ -28,8 +28,8 @@ const Sidebar = () => {
             clients.filter(client =>
                 client.fullName.toLowerCase()
                     .indexOf(text.toLowerCase()) >= 0)
-        )
-    }
+        );
+    };
 
     return (
         <nav className='w-[240px] ml-[40px] bg-gray-1 h-screen fixed top-0 left-0 px-3 py-8'>
@@ -73,7 +73,7 @@ const Sidebar = () => {
             })}
             {filterClients && filterClients?.length > 2 && <div className='text-[13px] leading-4 font-light text-center'>+ <span>{filterClients?.length - 2}</span> found records</div>}
         </nav>
-    )
-}
+    );
+};
 
-export default Sidebar
+export default Sidebar;

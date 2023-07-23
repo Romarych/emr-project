@@ -1,0 +1,20 @@
+export type ClientType = { 
+    isChange: boolean,
+    id: string,
+    photo: string,
+    address: string,
+    comments: string,
+    dob: string,
+    email: string,
+    facebook: string,
+    fullName: string,
+    gender: string,
+    height: string,
+    instagram: string,
+    medical: string,
+    notificationsEmail: boolean,
+    notificationsSMS: boolean,
+    phone: string,
+    recomendations: string,
+    weight: string
+}

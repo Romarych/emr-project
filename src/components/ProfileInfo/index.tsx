@@ -132,7 +132,7 @@ const ProfileInfo = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    {!isChange &&
+                                    {!isChange && client?.id &&
                                         <div className='flex py-8 mx-5 border-b border-b-gray-3'>
                                             <button type='button' className='bg-blue-1 w-[175px] h-[39px] mr-5 rounded-sm text-[13px] font-medium leading-4 text-gray-1 flex items-center justify-center'>
                                                 <img src={order} alt="Order" className='h-6 w-6 mr-4' />
@@ -221,6 +221,7 @@ const ProfileInfo = () => {
                                             <button type='button' onClick={() => {
                                                 setIsChange(!isChange);
                                                 setPhoto('');
+                                                !client?.id && setIsNewClient(false);
                                             }}
                                                 className='bg-gray-1 w-[128px] h-[39px] mr-5 rounded-sm text-[13px] font-medium leading-4 text-black-1 flex items-center justify-center'>
                                                 <img src={arrow} alt="Arrow" className='h-6 w-6 mr-4' />
